@@ -1,0 +1,282 @@
+<!-- component -->
+<!-- component -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      defer=""
+      src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"
+    ></script>
+
+    <!-- <link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.2.4/dist/tailwind.min.css"> -->
+  </head>
+  <body class="bg-gray-50" >
+    <header class="bg-white">
+      
+
+      
+      
+  </header>
+    <div class="min-h-full">
+      <nav class="bg-gray-800">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="flex h-16 items-center justify-between">
+            <div class="flex items-center">
+     
+              <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-4">
+                  <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                  <a
+                    href="/home"
+                    class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
+                    aria-current="page"
+                    >Home</a
+                  >
+                  <a href="/sp?name=<%= name %>">
+                    <button class="bg-blue-500 hover:bg-blue-600 text-white px-2 py-1 rounded-md">My info</button>
+                  </a>
+                  
+                  
+                  
+                </div>
+              </div>
+            </div>
+            <div class="hidden md:block">
+              <div class="ml-4 flex items-center md:ml-6">
+
+
+                <!-- Profile dropdown -->
+                <div class="relative ml-3">
+
+                    <div class="md:block lg:block sm:hidden max-w-md mx-auto">
+                        <div
+                          class="relative  flex items-center w-full h-8 border border-gray-500 rounded-sm  bg-gray-600 overflow-hidden"
+                        >
+                          <div
+                            class="grid place-items-center w-12 bg-gray-600 text-gray-300"
+                          >
+                            <svg
+                              xmlns="C:\Users\kalid\OneDrive\Desktop\epics\homePage\logo.png"
+                              class="h-6 w-6 bg-gray-600"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                              />
+                            </svg>
+                          </div>
+          
+                          
+                        </div>
+                      </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="md:hidden" id="mobile-menu">
+          <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+            <a
+              href="/home">
+            
+              class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
+              aria-current="page"
+              >Home</a
+            >
+            <a href="/sp?name=<%= name %>">
+              <button class="bg-blue-500 hover:bg-blue-600 text-white px-2 py-1 rounded-md">My info</button>
+            </a>
+            <a
+              href="#"
+              class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+              >Employees</a
+            >
+            <a
+              href="#"
+              class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+              >Pricing</a
+            >
+            <a
+              href="#"
+              class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium"
+              >Blogs</a
+            >
+          </div>
+          <div class="border-t border-gray-700 pb-3 pt-4">
+            <div class="flex items-center px-5">
+                <div class="md:block lg:block sm:hidden max-w-md mx-auto">
+                    <div
+                      class="relative  flex items-center w-full h-8 border border-gray-500 rounded-sm  bg-gray-600 overflow-hidden"
+                    >
+                      <div
+                        class="grid place-items-center w-12 bg-gray-600 text-gray-300"
+                      >
+                        <svg
+                          xmlns="C:\Users\kalid\OneDrive\Desktop\epics\homePage\logo.png"
+                          class="h-6 w-6 bg-gray-600"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                          />
+                        </svg>
+                      </div>
+      
+                      <input
+                        class="bg-gray-600 outline-none text-sm text-gray-300 pr-2"
+                        type="text"
+                        id="search"
+                        placeholder="Search something.."
+                      />
+                    </div>
+                  </div>
+            </div>
+ 
+          </div>
+        </div>
+      </nav>
+<div class="bg-blue-300 flex justify-between">
+  <div class="max-w-7xl px-4 py-6 bg-blue-300 sm:px-6 lg:px-8 hidden lg:block md:block">
+    <!-- Use EJS syntax to dynamically set the image path -->
+    <img class="flex-1 w-48 h-48 rounded-full shadow-lg" src="<%= imagePath %>" alt="hi">
+  </div>
+  <div class="bg-blue-300 max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+    <div>
+        <h1 class="text-3xl font-sans tracking-tight text-gray-900">
+            <%= name %>
+        </h1>
+        <p class="ml-0 mt-1"><%= course %></p>
+    </div>
+</div>
+
+          <div class="bg-blue-300 mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+
+            <div class="flex justify-between">
+          
+              <!-- Content -->
+              <div class="flex-1">
+                <!-- Rest of content -->
+              </div>
+          
+              <!-- Buttons -->
+              <div class="flex space-x-4 hidden lg:block md:block">
+                <a href="/write?student_id=<%= student_id %>">
+                  <button class="bg-blue-500 hover:bg-blue-600 text-white px-2 py-1 rounded-md">Write Exam</button> 
+                </a> 
+                
+                <button onclick="logout()" class="bg-gray-500 hover:bg-gray-600 text-white px-2 py-1 rounded-md">Log out</button>
+                <script>
+                  function logout() {
+                       window.location.href = "/login";
+                  }
+                </script>
+                
+              </div>
+          
+            </div>
+          
+          </div>
+        
+</div>
+      <main>
+        <div class=" max-w-7xl py-0 ">
+            <div class="md:flex no-wrap md:-mx-2  ">
+                <!-- Left Side -->
+<div class="w-full md:w-3/12">
+  <div class="p-3">
+    <ul class="-mt-3 text-sm font-semibold text-gray-500 hover:text-gray-700 py-2 px-3 mt-3 divide-y rounded bg-white">
+      <li class="items-center py-3">
+        <span>Student id: <%= student_id %></span>
+        <br/>
+        <span><%= specialization %></span><br/>
+        <span class="ml-auto"><%= institute %></span>
+      </li>
+      <li class="items-center py-3">
+        <span>From: <%= course %></span><br/> <!-- Display the working from date -->
+        <span class="ml-auto">Present</span>
+      </li>
+      <li class="items-center py-3">
+        <span><%= email %></span><br/>
+        <span class="ml-auto"><%= institute %></span>
+        <span class="ml-auto"><%= location %></span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+                
+                <!-- Right Side -->
+                <div class="w-full mx-2   md:block lg:block md:-mt-24 sm:mt-0">
+                    <!-- Profile tab -->
+                    <!-- About Section -->
+                    
+                    
+                    <!-- End of about section -->
+        
+                    <div class="my-1 "></div>
+<div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8 sm:block">
+  <div class="overflow-hidden border border-gray-200 md:rounded-lg">
+    <table class="min-w-full divide-y divide-gray-200">
+      <tbody class="bg-white divide-y divide-gray-200">
+        <% tests.forEach(test => { %>
+        <tr>
+          <td class="px-4 py-4 text-sm font-medium">
+            <div>
+              <h2 class="font-medium text-gray-800">Test ID: <%= test.test_id %></h2>
+              <% const currentDate = new Date(); %>
+              <% const endDate = new Date(test.end_date); %>
+              <% if (currentDate > endDate) { %>
+                <h2 class="font-medium text-gray-800">Status: Completed</h2>
+              <% } else { %>
+                <h2 class="font-medium text-gray-800">Status: Completed</h2>
+              <% } %>
+            </div>
+          </td>
+          <td class="px-4 py-4 text-sm font-medium">
+            <div>
+              <% if (currentDate > endDate) { %>
+                <a href="/api/results/<%= test.test_id %>">
+                  <button class="block text-black text-sm shadow-border bg-blue hover:bg-blue-dark text-sm py-3 px-4 font-sans tracking-wide uppercase font-bold">
+                    Verify
+                  </button>
+                </a>
+              <% } else { %>
+                <a href="/api/results/<%= test.test_id %>">
+                  <button class="block text-black text-sm shadow-border bg-blue hover:bg-blue-dark text-sm py-3 px-4 font-sans tracking-wide uppercase font-bold">
+                    Verify
+                  </button>
+                </a>
+              <% } %>
+            </div>
+          </td>
+        </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+                    <!-- End of profile tab -->
+                </div>
+            </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

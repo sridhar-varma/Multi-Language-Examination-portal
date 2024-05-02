@@ -1,0 +1,27 @@
+{
+  "name": "your-project-name",
+  "version": "1.0.0",
+  "description": "Description of your project",
+  "main": "loginserver.js",
+  "scripts": {
+    "start": "node loginserver.js"
+  },
+  "author": "sridhar",
+  "license": "MIT",
+  "dependencies": {
+    "@google-cloud/language": "*",
+    "@google-cloud/translate": "*",
+    "@google-cloud/vision": "*",
+    "bcrypt": "^5.1.1",
+    "body-parser": "*",
+    "ejs": "^3.1.9",
+    "express": "*",
+    "express-session": "*",
+    "fs": "*",
+    "multer": "*",
+    "natural": "*",
+    "node-fetch": "*",
+    "path": "*",
+    "pg": "*"
+  }
+}
