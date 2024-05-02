@@ -42,11 +42,7 @@ const upload = multer({ storage: storage });
 
 // Database configuration
 const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'trail',
-  password: 'sridhar@04',
-  port: 5000,
+ //postgres credentials
 });
 
 // Session middleware
@@ -75,50 +71,19 @@ app.use(express.static('public'));
 
 const CREDENTIALS1 =JSON.parse(JSON.stringify(
   {
-      "type": "service_account",
-      "project_id": "epics-416913",
-      "private_key_id": "87a8c8417ad47a3dfdd5b3dc9dc47b16b51d9876",
-      "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDUm1BHNw2kj24R\nFrQeQaD8AuMRKwfF1FvnCnIPfXT4C8BqWPz/zvv04ffZIGsPVuRbx4EvmY0E2u0j\nLhQlqqYEKAQv3uHu6ilSiYgHf63mYV59B2N9y8tOuGstr9Ix+Jw9zk5aXXzcgPzf\nmc2g7vV5UP5aZeiqK/gpq85A7iqEj8U+n94LsiDphiMoR595ePgU4h/97BH6VSHY\nnI1cZkXm0u2Y6Moainrt2V2A5cWFwmZONxVz8g9Z/TZyp10gDZTn+UachBmMgvce\nyKpu/1xCEDLR1qphChqVtr+4DweHU7skEvfXObvmpXSEOyQXbsHNLhO7gW5X8nlF\nDg0V585tAgMBAAECggEADpHnPj4mW/LtYNPsu48VVHfxLjXD9ll/g9WaK/gVykLp\n6I/ZJMG/UBClTtazJ421oBmLv6KXALBtJGZNwKgRcQL6CHrOgnQ/KTYeIZ9tIDbn\nhgt51L7g26/1PmAIeF64fF7VTUmPW0AmtD8i0abWoT389F58A594RgjNXXNE7Ckb\nJAT3HOR+zhNG+6ithrRgsFRVBfTE2lRKyPtSUIBycQ6JfKmKEPYFcNtKUSm3TYrR\nZYRwqq6cGEiGXAAhgry4xiLwsCtnVqjYExtjYi983mxV+on56QSMZJUlPKoQDEPr\nTwt95/ApaKiCtcalWNwjKAaFzy17vhgDfAFMjeFPMQKBgQDyi5jbwbd42H9bQisb\no8nQOv54aI4fkHJ2rXW3OvoQRmXrB8mPkZOtcGV1W/8dkatBU5zDdsJYFEMT/aPJ\n/X3G//k6VoAASYI4dPFBW/3INEI0MCrg8WYyidoBbXrY17D5rBwOZ87UFJ6ETTAw\nhgw62qduGMMw4MHFdUnYyuhcHQKBgQDgZo5j1n3Ugg1gEDJOi/JAG2F5xIvMwnu0\n1CKzirNViDPAVgpPnFMiMtdY4MUrsZCZn72Fd5AzXeqpZwkLy/Of28pADS6bEzK/\nqeoxQMjGZ2zQ0zwglsmEX/aTEWB1D+G1LEe9gbXtCCrMdbjhCuxk8BCU3crbGAsJ\nDbkkl/SKkQKBgFf+/6FTId6NJX+VfRBVFyYeES7cOBwJiw21lwy4L/txnw5rT9xv\no5V8PsMacm9m5ywXSru7vXy5NTDuh9sDxftJ6UEaGux/vuf+vXzKBEP7eb13cEcW\nLc7OJrL35mb/siyTHca4MNjO9kfnvUENkShVJgOSplZ4ZLTf/b/StgSdAoGAdN50\nwiJvnkGtXZ6R1L6mCCU6ewSWGqofa2ogOInAJIevDDjDXfr4gRMhfLRze/IacSf0\nuJIwk9AR6vAykeZCl7sMdpdm8nTpNVD1G3m2Fz6+OXQKGJ7vjPW9oZKnPdBrqMPL\nCTOI4E4knB+jjfD2dQtiV2W7xKec97Yh+qD5R0ECgYEAlJXw3oV7v1ZEA7tou6LK\nT1hxqkY8tobx2aH8AoZVV1eZFdVpfwidmOCyVjYPPxASyF6rmvT8VyeWDfBiP7tx\n7mPmiNAqhX1Xsm+gs9z5djLF/s5Q6y9vbK4xlKb+QnPJaeDNY5gh+KpcaS3IiQ4Q\natKaP1buZWYlVpH0fap2fUw=\n-----END PRIVATE KEY-----\n",
-      "client_email": "sridhar@epics-416913.iam.gserviceaccount.com",
-      "client_id": "110569767106073946384",
-      "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-      "token_uri": "https://oauth2.googleapis.com/token",
-      "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-      "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sridhar%40epics-416913.iam.gserviceaccount.com",
-      "universe_domain": "googleapis.com"
+      //gcp translate api credentials
     }
 
 )
 );
 
 const CREDENTIALS2 =JSON.parse(JSON.stringify({
-  "type": "service_account",
-  "project_id": "epics-416913",
-  "private_key_id": "0687648f7fffbed56828c1d83eb3c80343eda4f7",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDaIBnUPNcN7RPu\nTf8e85SsWgZ20y9hX2FEA5L6nzvC79YkZPDxVtRTnNlygMFyQ6OGeUb6opGO1mt2\ntmzABrup8qPAErew3cpSi3LQ57fSI/7xEj5bpRIQO2yTgK8PG+EAqzI8iWWskaKL\nMn4Wc/TxWgo+DFlmMctYBzBXrmnSzc6VpS52tXPCcVL206pQ42ukQegXvYE+/wc0\nvMN13kfNM89nxH5I/tWGZKcTom/rhq2Rl2n1mjn2RoIHxJnj0Lio1akJCW4i36hu\nU3uROK6bS8Gfj5P/7lROTPpGqIV4Gpbj7yItkBxP37B7ijtNmDE1NdgroZjutpJX\nrJXMbo17AgMBAAECggEASlywQY1eSZad+Vuo0p36/QkR9BeKKxmPuNa5GG0JvCr0\np+Kry7Ms3rZ14VXo3TIXASS+YHrkwbvy1f1aNNr2xnj8f2JCMm9iZuK4iWS948u2\nwevUy3yKnHMN0HmJ9M4t1oMGtOGogn0B24+isbfldRSbskyWe8MVDlUhE3tYA2/a\nUn4pe4k1WQy3jcpahERYV+RnsJYmk5Tr7s2QkfnvRCWJZpPdOh2E+ky4q2vjGGjG\nUwnqTs6vrZgx3yIuwxfNQ5YmirgOQrtQor49tHbTlOtthon4bWUDvoiGbNl8tbQD\nKwS7dEQfT3KDMApergMXT3+CveVnQN3OrPzNSM5qjQKBgQDtpcCnEYoIaQofw7eZ\nZL02GKF2Unkq48DbLXOZ/WRwJbxhgfEpvdAJxYBxfvKJOXHY8TXeHLYlml4glId7\n+BZ5wYDBTKjnVIjfBTVJWwmB+6mavc5hcn72wVSQzzlMvVlvQYdI8rPLwB8MQ0dB\nauEHU4ioLPI3y56jb2/75r0PPwKBgQDq+GaCL23yGobVlQTn75UfBaPUTbjOTTla\njoe2a6eHQKgCtnX9cjCrEOCZsvPl+1nW3mCgK8/7ffH0RlQbx954xgHQ8RI6i0qw\nS0bslEJ7ATt+pQh70+zaB5cyeyo/5PC0+Vgg5k43ts8fca1Kzxin6CnthEccLgp4\nONUakyuuxQKBgQDWqjX28/nqlO9nOASdlAjyV5dp6R+4ZVis40acH+7c+slKjvUI\nDoRgfz4Bx3lQCUrUezZ8dxT1rJY/+crUaYnr26XxdczQgWTNh8fVhl11Q521wKQv\nFBypyoMX94e70QJ7ZAbPFyTf9KBXFGLGLcQtOQClYUw+qDiZSy0trwSyQwKBgH8U\ny7Q7XLZlPGmFiDq87CT0EvA+/OWvBIcCsUmrHddb08Jr1pK10LakkSTvkVPgRm2c\nphvatkjpjBO2ecTwq1UcmlzcFSTOsx14CSro4K/QMdJEBbubGe2tz0uBK4+VDc6D\nUPOyO7mMSKdT/wqHyWj+era4JRGLoSP2cONHl4eVAoGATfi49r6KkEqFqPLxhXDB\nRJoozlrwTgQEtdRJhk8n1N9Ev+P/PVB9fIx/MpYs86OvrZH7/O/Y9GfGn5pcXho2\nfwIN9cFqhzLZKv93qyj+vIgkzA2Il0tET3/LDIt8EuTFE8bUcmB9Qsh97i+7QECO\nRBdqM3qumBgE+57j3CCITJE=\n-----END PRIVATE KEY-----\n",
-  "client_email": "sridhar@epics-416913.iam.gserviceaccount.com",
-  "client_id": "110569767106073946384",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sridhar%40epics-416913.iam.gserviceaccount.com",
-  "universe_domain": "googleapis.com"
-}
+  //gcp vision api credentials
 ));
 
 // Load the service account credentials
 const credentials = {
-  "type": "service_account",
-  "project_id": "evocative-nexus-416906",
-  "private_key_id": "18aabc84e4d24a6d46128df6e1c2ab17a1ce537a",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCln3HSuipZWPC2\nqIFHtWZlCpB3VmpZ4cdfOv6ouHDxXlQquhZmSciibKbfk1qYyfPEyqBhkywUWmRY\ncDUxggSFkrF9puu3Zql01EYFnbEH3f7xibSnjbE2b6kOtnNhFETXk+eT0gFxRpo1\nMG+gLVcv01WpUa6aqn/TG4yMsKjIQ+e1RtLWdCqnlH5JyRmIXOkSAdwU/6o3zZJM\nsJ/5hdJ0p6B7Mq3t/RoxN6eIJJnVDy1y9XBC7GU7J+B/gfL6rOxf4aOBrvHgveiF\naciXW1RU9/kfgiCNyeS1cH/TD9758z2JxQo44xXAldyQnY3M1Pv3SUxsjaqgPvfI\nSak+KbH9AgMBAAECggEAAYS/Zmuq/tiAI55gyfW/03uP+xZaamM5V9uEZOQTJQb0\n0+92L8gg9eqCALyOeBgpCyFQerD+wSLL7ErFwE50be/DRi5TZZ6kPVUYee2YNX3Q\nBtGVS8lSkxRPdPMTv0yQRs1Jskaap3LI8BBag+EC/Wm2MSHne3xxKHrNhG59yFhF\nBtvY3rPYtK+YdeFBicmqTARzLyA6EjvdhiTpVbvFJUvr9kXBjK84MnHMlqPZGmr0\nrCpHAxggCCq+V9fZp7q2ZkwD2JcS6i2SNgDT8n9sRXlLdBUvJu2VSPfF01uocedK\nOkk7oSvs9YYQ1TQNAne1FpTuW9RbxognBR6seU/jgQKBgQDjaHPYw7rxMwexS/RG\nPNgsQZFaXZB/k+VHVr+h2wzljGdcyRmA2Mdom3kfB17I11+eMI1fgNE7EfRnRqFH\nqwllqdKqAxpG1nnXMLC2RKgcnsdI64/zDkWfrl5znsGrnh6TzHDGIXExe8UPuUrA\njvEzzVmZu0vIfqk8KZTeoEKJZwKBgQC6clJVxJiHnnUFvFe5YgL/UPktowvQ+f5c\nSDenBxcheHWA3g2DJMmUGE1V8vQgf75Wc1PG5VBdihn6ZHCxjKRSxzURSLKbW9uS\nFJB6Ly5ws9GeYqIHxRLCPJWXXhZtM804+TQ1Diq8REjKT/DphJcYa1kkvDfTpTaW\nJ6Q1CXz2+wKBgQCggu+SBsWCzhQV7piiovuqcTVZZUVC528kJXTpl6XIuIuUkFUx\n/tDxYxvg7ODYPjy9eWOwD0qfuRKbet0Hqw/c9Ds/ySTY7zXcz/9LB7bpTKE5NRvL\n4Tz/cqI0VdA5hEfs5paLIru0w7naWV0MAVj6yWz+95aME+r8DhWH9fJA7QKBgCql\n4d2KldVX0q7YMTzPhZ3/WLAuvpIzzRIw1sIXJhxa4I30vSSFcrK0iGQjqeIRNmmy\nAbTaWXK8F0smVHzYjfH9bU8h0PEmpugYWiAI0Neo2kcfiq66Tpstno48UGb0VXo1\nztJgBjiAaiIU/Sd9U86bJ432m9KG1SCtuqsDG5mnAoGBAJMnseG6EoK9gBJ+cwT6\nTdBaIaFyMRSOxvyfSGTh83L3ao+SxS36aFLgVMz2kG0EGeV+i5wvPzE1xv+4DCOO\nH0/imAQ0i9RUwBvNSkucIjWts/aC+2sYm3zu51V6adzG9LWVRVxjedeZqESayI2A\nuD1v3VZEY7zSxSgySb2/KGcS\n-----END PRIVATE KEY-----\n",
-  "client_email": "sridharvarma100@evocative-nexus-416906.iam.gserviceaccount.com",
-  "client_id": "105857508281453875513",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sridharvarma100%40evocative-nexus-416906.iam.gserviceaccount.com",
-  "universe_domain": "googleapis.com"
+  //gcp natural language api credentials
 };
 
 // Create a client
