@@ -19,7 +19,7 @@ const path = require('path');
 const app = express();
 const port = 3000;
 
-const textRazorApiKey = 'bd6f0eeb3ac57a8eb9b2d322009dcc35ab7c7e3e905367aca6a5c0d2';
+const textRazorApiKey = ''; //please use your Razor API KEY
 
 // Setup middleware
 app.use(express.json());
