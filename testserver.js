@@ -13,11 +13,8 @@ const upload = multer({ storage: storage });
 
 // PostgreSQL database connection configuration
 const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'trail',
-    password: 'sridhar@04',
-    port: 5000, // Change port to default PostgreSQL port (5432)
+    use your postgres credentials
+    // Change port to default PostgreSQL port (5432)
 });
 
 app.use(express.static('public'));
